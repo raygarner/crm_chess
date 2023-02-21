@@ -1,0 +1,26 @@
+Abstract
+========
+Chess engine written in C with a CLI
+Can play as black or white or have the engine play against itsself
+Default installation dir is /usr/bin
+
+Build:
+$ make
+
+Install:
+$ sudo make install
+
+Uninstall:
+$ sudo make uninstall
+
+Usage:
+$ crm w
+
+White:
+$ crm w
+
+Black:
+$ crm b
+
+Selfplay:
+$ crm
