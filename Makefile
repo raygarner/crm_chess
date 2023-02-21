@@ -17,13 +17,13 @@ options:
 	@echo "EXES    = $(EXES)"
 
 clean:
-	rm -f $(EXES) crm.tar.gz
+	rm -f $(EXES) crm_chess.tar.gz
 
 dist: clean
-	mkdir -p crm-dist
-	cp -R README TODO Makefile $(SRC) crm-dist
-	tar -cf - crm-dist | gzip > crm.tar.gz
-	rm -rf crm-dist
+	mkdir -p crm_chess-dist
+	cp -R README TODO Makefile $(SRC) crm_chess-dist
+	tar -cf - crm_chess-dist | gzip > crm_chess.tar.gz
+	rm -rf crm_chess-dist
 
 install: all
 	cp -f $(EXES) $(DEST)
