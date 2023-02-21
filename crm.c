@@ -1,9 +1,7 @@
-#include <ctype.h>
-#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 #include <string.h>
+#include <time.h>
 
 /* defs */
 #define LOGNAME craham.log
