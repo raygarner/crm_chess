@@ -1,12 +1,12 @@
 .POSIX:
 
 DEST = /usr/bin
-SRC = craham.c
+SRC = crm.c
 EXES = $(SRC:.c=)
 
 all: $(EXES)
 
-craham:
+crm:
 	$(CC) $(CFLAGS) $@.c -o $@
 
 options:
@@ -17,13 +17,13 @@ options:
 	@echo "EXES    = $(EXES)"
 
 clean:
-	rm -f $(EXES) craham.tar.gz
+	rm -f $(EXES) crm.tar.gz
 
 dist: clean
-	mkdir -p craham-dist
-	cp -R README TODO Makefile $(SRC) craham-dist
-	tar -cf - craham-dist | gzip > craham.tar.gz
-	rm -rf craham-dist
+	mkdir -p crm-dist
+	cp -R README TODO Makefile $(SRC) crm-dist
+	tar -cf - crm-dist | gzip > crm.tar.gz
+	rm -rf crm-dist
 
 install: all
 	cp -f $(EXES) $(DEST)
