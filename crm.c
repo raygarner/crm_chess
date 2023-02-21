@@ -8,19 +8,11 @@
 #define LOGNAME craham.log
 #define SIDE 8
 #define MOVES 256
-#define CAPTURED -1
 #define DEPTH 5 /* ply number */
-#define QDEPTH -32
-#define TABLESIZE 65536
 #define EXACT 0
-#define NO_EVAL -999999
-#define NO_HASH 0
 
 #define LAST_ACTION { .m = 0 , .n = 0, .movem = 0, .moven = 0, .eval = 0 }
 #define EMPTY_SQUARE { .type_val = 0, .colour = -1, .mc = -0 , .node = NULL}
-
-#define MIN(A, B) ((A) < (B) ? (A) : (B))
-#define MAX(A, B) ((A) > (B) ? (A) : (B))
 
 #define HOMEROW(A) ((A) ? (7) : (0))
 #define PAWNHOMEROW(A) ((A) ? (6) : (1))
