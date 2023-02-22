@@ -1954,20 +1954,33 @@ main(int argc, char *argv[])
 	int selfplay;
 	int computer_colour = WHITE;
 
-	if (argc == 1) {
-		selfplay = 1; 
+	if (argc < 2) {
+		printf("Please pass mode as arg\n");
+		printf("eg: crm s\n");
+		free(board);
+		return 1;
 	} else {
-		selfplay = 0;
-		if (!strcmp(argv[1], "w")) {
-			printf("player is white\n");
+		switch (argv[1][0]) {
+		case 's':
+			selfplay = TRUE;
+			break;
+		case 'w':
+			selfplay = FALSE;
 			orientation = WHITE;
-		} else if (!strcmp(argv[1], "b")) {
-			printf("player is black\n");
-			orientation = BLACK;
-		} else {
-			selfplay = 1;
+			computer_colour = orientation;
+			break;
+		case 'b':
+			selfplay = FALSE;
+			orientation = BLACK;;
+			computer_colour = orientation;
+			break;
+		default:
+			free(board);
+			printf("Invalid mode. Modes: (s)elfplay, (w)hite or "
+			       "(b)lack\n");
+			printf("eg: crm s\n");
+			return 1;
 		}
-		computer_colour = orientation;
 	}
 	ab.a = -2000000;
 	ab.b = 2000000;
